@@ -1,0 +1,117 @@
+workspace {
+
+    model {
+		enterprise "Home Office" {
+			manager = person "Manager" "" "Manager"
+			planner = person "Planner" "" "Planner" 
+			worker = person "Worker" "" "Worker"
+			scheduler = person "Scheduler" "" "Scheduler"
+			operations = person "Operations" "" "Operations" 
+		
+			balanceETL = softwaresystem "Balance ETL" "Wraps TAMS and presents balance data in format that Callisto can work with" "Existing System"
+			agreementFacade = softwaresystem "Agreement Facade" "Wraps TAMS and presents data in format that Callisto can work with" "Existing System"
+			metis = softwaresystem "Metis" "Home Office HR system" "Existing System"
+			drt = softwaresystem "DRT" "Provides a feed of demand information" "Existing System"
+			localSystems = softwaresystem "Local Systems" "Locations have their own systems that hold data that will need to be ingested or integrated with Callisto" "Existing System"
+			monitoringAndAlerting = softwaresystem "Monitoring and Alerting" "Provides operations with insights into Callisto's health at runtime" "Existing System"
+		
+			callistoSystem = softwaresystem "Callisto" "Callisto is a rostering and time recording system. It allows people to plan out shifts and it allows people to record the time they have worked." {
+				scheduling = container "Scheduling" "Allows planners and schedulers to design and roster shifts in order to meet demand"
+				timecard = container "Time Card" "Allows are worker to view their upcoming shifts and to record time worked against their shifts"
+				accruals = container "Accruals" "Tracks hours worked againt accruals targets"
+				absence = container "Absence" "Allows a worker or manager to record planned and unplanned absences"
+				organisation = container "Organisation" "TODO"
+				referencedata = container "Reference Data" "TODO"
+				person = container "Person" "TODO"			
+			}
+		}
+		
+		# relationships between people and software systems
+		agreementFacade -> callistoSystem "sends target balances at the start of a new agreement"
+		balanceETL -> callistoSystem "sends actual target balances at the time of TAMS worker offboarding and Callisto worker onboarding"
+		metis -> callistoSystem "sends various kinds of personal data that support Callisto's functions"
+		drt -> callistoSystem "sends demand information"
+		localSystems -> callistoSystem "hold a variety of data in locale-specific formats"
+		operations -> monitoringAndAlerting "monitors Callisto's health"
+		callistoSystem -> monitoringAndAlerting "sends health data"
+
+        # relationships to/from containers
+		planner -> scheduling "designs shifts to meet demand"
+		scheduler -> scheduling "rosters workers onto shfits"
+		worker -> timecard "views shifts and records time worked against shifts"
+		manager -> timecard "views teams shifts, recorded hours and also makes ad-hoc changes to shifts"
+		worker -> absence "records planned and unplanned absence"
+		manager -> absence "records planned and unplanned absence for team members"
+		worker -> person "updates working preferences"
+		timecard -> accruals "informs of worked hours to allow appropriate actual accrual balances to be adjusted"
+		scheduling -> accruals "informs of planned hours to allow appropriate projected accrual balances to be adjusted"
+		absence -> scheduling "informs of absence hours to trigger any neccesary re-planning or re-rostering"
+		absence -> timecard "informs of absence hours to trigger their recording"
+				
+		//organisation?
+		//referencedata?
+    }
+
+    views {
+	
+        systemlandscape "SystemLandscape" {
+            include *
+            autoLayout
+        }
+
+        systemcontext callistoSystem "SystemContext" {
+            include *
+            autoLayout
+        }
+
+        container callistoSystem "Containers" {
+            include *
+			animation {
+				scheduling
+				timecard
+				accruals
+				absence
+				person	
+				organisation
+				referencedata
+			}
+            autoLayout
+        }	
+	
+        
+        styles {
+            element "Person" {
+                color #ffffff
+                fontSize 22
+                shape Person
+            }
+            element "Worker" {
+                background #08427b
+            }  
+            element "Manager" {
+                background #08427b
+            } 
+            element "Planner" {
+                background #08427b
+            } 
+			element "Scheduler" {
+                background #08427b
+            }
+			element "Operations" {
+                background #08427b
+            } 			
+            element "Software System" {
+                background #1168bd
+                color #ffffff
+            }
+            element "Existing System" {
+                background #999999
+                color #ffffff
+            }			
+            element "Container" {
+                background #438dd5
+                color #ffffff
+            }			
+        } 
+    }
+}
