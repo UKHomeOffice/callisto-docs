@@ -11,7 +11,7 @@ At it's core the TimeCard container allows people to view time that they're been
 - **users** - manager and worker
 - **collaborations** - absence (consumes) and accruals (produces)
 
-[TimeCard container definition](https://github.com/)
+[TimeCard container definition](https://github.com/UKHomeOffice/callisto-timecard-restapi/blob/main/docs/container-definition.md)
 
 ## Scheduler
 The Scheduler container is used by planners to design and staff (roster) shifts.
