@@ -2,7 +2,7 @@
 
 Callisto as a system is made up of a number of loosely coupled containers that combine to deliver the various workflows that Callisto supports.
 
-![Callisto containers](./images/callisto-containers.png)
+![Callisto containers](./images/containers.png)
 
 
 ## TimeCard

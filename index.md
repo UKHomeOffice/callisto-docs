@@ -4,6 +4,11 @@ The repository is a place for design documentation for Callisto. If you want to 
 
 We've deliberately kept things light. Reading documentation should not be an arduous task. We've structured the docs in an effort to allow you to find your answer quickly and without fuss. To support us in this goal we use the [C4](https://c4model.com/) way of describing our architecture. 
 
+We've also adopted the "diagrams as code" approach which allows us to create multiple diagrams from a single model. We've chosen the [Structurizr](https://structurizr.org/) tool to help us turn our models into diagrams. Structurizr is a web-based tool which has it's own domain specific language (DSL) that can be used to build a model. From there Structurizr can use the model to render a range of different diagrams. 
+
+The Structurizr DSL is itself built with C4 concepts at its core and so is a natural fit with how we're describing the architecture of Callisto. You'll find a [model.c4](model.c4) file in the root of this repository. The model.c4 was used to generate the images found in the [images](images) directory that give an overview of the containers within Callisto. In addition container specific repositories will have their own model.c4 files which drill in to more detail about the specific container.
+
+
 ## What is Callisto?
 
 Callisto is a rostering and time recording system. It allows people to plan out shifts and it allows people to record the time they have worked. The project is being sponsoted by Border Force who have some of the most complex requirements in the Home Office however Callisto is indended to be useable by other organisations within Home Office and so must remain flexible to meet their needs.
