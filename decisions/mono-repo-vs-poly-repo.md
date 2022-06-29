@@ -23,7 +23,7 @@ For more please see https://github.com/joelparkerhenderson/monorepo-vs-polyrepo
 
 
 ### Decision
-TODO
+DONE
 
 ### Status
 
@@ -34,8 +34,12 @@ TODO
 ### Constraints
 
 ### Options
+* Polyrepo
+* Monorepo
+* Hybridrepo
 
 ### Selected Option
+Polyrepo
 
 ### Implications
 
