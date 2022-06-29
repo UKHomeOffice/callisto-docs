@@ -8,8 +8,6 @@ We want our system to be resiliant such that if a service moves into an unhealth
 
 In addtion we do not want to have to change a producer service if another service needs to be invlvoed in a workflow
 
-choreography
-
 ### Decision
 WIP
 
@@ -32,20 +30,21 @@ Whatever we select must work in the context of ACP, Kubernetes and Kafka
 Event driven
 
 ### Implications
-Hard to debug 
-Hard see workflow dependencies
-Eventual consistency
-Event ordering
-Duplicate events
+* Hard to debug 
+* Hard see workflow dependencies
+* Eventual consistency
+* Event ordering
+* Duplicate events
 
 ## Related
 
 ### Related decisions
-scaling-application.md
+* [scaling-application.md](scaling-application.md)
 
 ### Related requirements
-resilaiant
-independent deplyoment
-scaling
+* resilaiant
+* independent deplyoment
+* scaling
 
 ## Notes
+choreography vs orchestration
