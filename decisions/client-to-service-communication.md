@@ -5,7 +5,7 @@
 ### Issue
 
 ### Decision
-RESTful
+DONE
 
 ### Status
 
@@ -20,6 +20,7 @@ RESTful
 2. GraphQL
 
 ### Selected Option
+RESTful 
 
 ### Implications
 
