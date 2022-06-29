@@ -3,7 +3,7 @@
 ## Summary
 
 ### Issue
-We want our application layer to scale with minimal manual intervention so that Callisto end users expereince consistent response times
+We want our application layer to scale with minimal manual intervention so that Callisto end users experience consistent response times
 
 ### Decision
 WIP

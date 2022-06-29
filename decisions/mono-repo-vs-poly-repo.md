@@ -3,10 +3,9 @@
 ## Summary
 
 ### Issue
-Our project involves developing three major categories of software:
+Our project involves developing two major categories of software:
 
   * Front-end GUIs
-  * Middleware services
   * Back-end servers
 
 When we develop, our source code management (SCM) version control system (VCS) is git.
