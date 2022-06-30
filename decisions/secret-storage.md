@@ -34,6 +34,12 @@ Our security model for this purpose is fine with using well-respected COTS vendo
 ### Constraints
 
 ### Options
+Terraform state storage
+- S3 (encrypted at rest with controlled access process)
+
+Secret storage
+- GitHub
+- Drone
 
 ### Selected Option
 
@@ -44,3 +50,7 @@ Our security model for this purpose is fine with using well-respected COTS vendo
 ### Related decisions
 
 ### Related requirements
+
+## Notes
+
+Terraform state will need to store secrets to in order to track drift. We'll probably store this in an S3 bucket (ACP to create). We'll probably use one bucket for all of our terraform state. Ideally we'd have one bucket per terraform state however if we do that we're baking in a dependancy on the ACP team to provison a bucket for us. Trade of to be had with security vs ability of the Callisto team to self serve.
