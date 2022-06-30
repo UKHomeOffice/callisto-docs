@@ -3,7 +3,7 @@
 
 This page describes the non-functional properties of the Callisto system. Characteristics are divided into two categories -
 
-1.  Conainer - characteristics that any container in Callisto must be designed to embody. Note that a container can be a bespoke piece of software developed by the Callsto delivery team or it can also be a third party product that forms part of the system (eg file storage, database, message queue)
+1.  Container - characteristics that any container in Callisto must be designed to embody. Note that a container can be a bespoke piece of software developed by the Callsto delivery team or it can also be a third party product that forms part of the system (eg file storage, database, message queue)
 2.  System - characteristics that the Callisto system as a whole must be designed to embody
 
 For each type of characteristic the what, why and how are described. The "how" element is intended to be a rough strawman approach. Over time the "how" will be refined but the "what" describing a characteristic and "why" is the characteristic needed will remain static
