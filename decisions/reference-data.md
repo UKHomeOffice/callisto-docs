@@ -4,9 +4,13 @@
 
 Example of Ref Data plus best guess at usage 
 
+
 |Grades|UI,TimeCard, Scheduler, Reporting|
+
 |OperationalRoles		|Scheduler|
+
 |AdjustmentCreditTypes|		UI,TimeCard, Scheduler, Reporting|
+
 |Location|		Scheduler, PersonUI, Reporting|
 |Location Types|		UI|
 |Adjustment Types|		UI, Person, Accruals, Timecard?|
