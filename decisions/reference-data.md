@@ -4,17 +4,17 @@
 
 Example of Ref Data plus best guess at usage 
 
-Grades		UI,TimeCard, Scheduler, Reporting
-OperationalRoles		Scheduler
-AdjustmentCreditTypes		UI,TimeCard, Scheduler, Reporting
-Location		Scheduler, PersonUI, Reporting
-Location Types		UI
-Adjustment Types		UI, Person, Accruals, Timecard?
-Other Credit Types		UI, Person, Accruals, Timecard?
-Shift Type		UI,TimeCard, Scheduler, Reporting
-Absence Types		UI, Absence, Timecard?
-Time Period Type	SRD, NWD, Absence, Training etc	UI,TimeCard, Scheduler, Reporting
-Flex Change Types		UI,TimeCard, Scheduler, Reporting
+|Grades|UI,TimeCard, Scheduler, Reporting|
+|OperationalRoles		|Scheduler|
+|AdjustmentCreditTypes|		UI,TimeCard, Scheduler, Reporting|
+|Location|		Scheduler, PersonUI, Reporting|
+|Location Types|		UI|
+|Adjustment Types|		UI, Person, Accruals, Timecard?|
+|Other Credit Types|		UI, Person, Accruals, Timecard?|
+|Shift Type|		UI,TimeCard, Scheduler, Reporting|
+|Absence Types|		UI, Absence, Timecard?|
+|Time Period Type|	SRD, NWD, Absence, Training etc	UI,TimeCard, Scheduler, Reporting|
+|Flex Change Types|		UI,TimeCard, Scheduler, Reporting|
 
 ### Issue
 We want to be able to expose and manage reference data (static or slowly changing data) in Callisto. 
