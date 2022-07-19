@@ -39,3 +39,6 @@ TODO
 ### Related decisions
 
 ### Related requirements
+
+### Notes
+https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html
