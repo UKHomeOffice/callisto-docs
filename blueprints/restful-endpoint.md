@@ -74,8 +74,8 @@ Whenever our API does not successfully complete, we should fail gracefully by se
 ## Handle success consistently
 HTTP success response codes should be used consistently. In most cases a 200 response code will suffice.
 
-200 OK - This means that the request has been successful
-201 Created - Used in conjunction with a POST and indicates that the resource has been created
+- 200 OK - This means that the request has been successful
+- 201 Created - Used in conjunction with a POST and indicates that the resource has been created
 
 ## Allow pagination and sorting
 The databases behind a REST API can get very large. Sometimes, there’s so much data that it shouldn’t be returned all at once because it’s way too slow or will bring down our systems. Therefore, we need ways to control the number of resources that are returned in each response.We don’t want to tie up resources for too long by trying to get all the requested data at once.
