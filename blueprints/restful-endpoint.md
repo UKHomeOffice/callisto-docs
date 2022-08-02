@@ -62,6 +62,7 @@ Common error HTTP status codes include:
 - 401 Unauthorized – This means the user isn’t not authorized to access a resource. It usually returns when the user isn’t authenticated.
 - 403 Forbidden – This means the user is authenticated, but it’s not allowed to access a resource.
 - 404 Not Found – This indicates that a resource is not found.
+- 410 Gone - Usually returned when the resource has been deleted
 - 412 Precondition Failed - Usually returned in response to a an attempt to update a resource using stale data
 - 500 Internal server error – This is a generic server error. It probably shouldn’t be thrown explicitly.
 - 502 Bad Gateway – This indicates an invalid response from an upstream server.
