@@ -12,6 +12,9 @@ When a container receives a write command (create, update or delete) then it wil
 
 The version identifier is a key element in the strategy to manage resource contention as detailed on the [RESTful endpoint blueprint](./restful-endpoint.md#managing-resource-contention)
 
+## TBC
+:warning: **The content below is under active development and may change without notice** :warning:
+
 ### Handling deletions
 From a version history respect, deleting an entity is the equivalent of creating a special kind of history entry that has no content and is marked as deleted. 
 
