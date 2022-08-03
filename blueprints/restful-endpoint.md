@@ -115,6 +115,8 @@ Last-Modified: Weds, 17 July 2022 12:02:47 GMT
 ETag: W/"23"
 Content-Type: application/json`
 
+The ETag header is made up of the resources version identifier. More information about maintaining a version id can be found [here](./entity-versioning.md)
+
 The value of the ETag matches the value of the version id for the resource. Servers are allowed to generate the version id in whatever fashion that they wish, so long as they are unique within the address space of all versions of the same resource. 
 
 If the client wishes to request a version aware update, it submits the request with an If-Match header that quotes the ETag from the server:
