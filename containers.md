@@ -32,10 +32,10 @@ In Border Force many people are on what is known as an Annualised Hours Agreemen
 - `AHABucketBalance` - an event that holds the balance of a person's AHA Bucket at a given point in time
 
 ### Events consumed
-- `AHABucketTarget` - used to set up an initial balance for the given AHA Bucket
+- [`AHABucketTarget`](#tamsAgreementAdapter_ahaBucketTargetEvent) - used to set up an initial balance for the given AHA Bucket
 - `TimeEntry` - feeds into the calculation of zero or more AHA Bucket balances
 - an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
-- `AHABucketBalance` - Capture's a persons AHA Bucket balance. If a person is to be onboarded onto Callisto in the middle of their agreement period then their balances at the time of the onboarding need to be known so that Accruals can set a balance baseline
+- [`AHABucketBalance`](#tamsAgreementAdapter_ahaBucketBalanceEvent) - Capture's a persons AHA Bucket balance. If a person is to be onboarded onto Callisto in the middle of their agreement period then their balances at the time of the onboarding need to be known so that Accruals can set a balance baseline
 
 ### Clients
 #### Users
@@ -82,7 +82,8 @@ In Border Force many people are on what is known as an Annualised Hours Agreemen
 - No resources are exposed
 
 ### Events produced
-- `AHABucketTarget` - an event that holds the target associated with a person's AHA Bucket. A target has a time period in which it is effective
+- <a name="tamsAgreementAdapter_ahaBucketTargetEvent">`AHABucketTarget`</a> - an event that holds the target associated with a person's AHA Bucket. A target has a time period in which it is effective
+- <a name="tamsAgreementAdapter_ahaBucketBalanceEvent">`AHABucketBalance`</a> - an event that holds the balance associated with a person's AHA Bucket. A balance has a date and time at which it was current
 
 ### Events consumed
 - No events are consumed
