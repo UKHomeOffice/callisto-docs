@@ -59,6 +59,7 @@ An individual is onboarded into Callisto as part of the private Beta onboarding 
 - A new agreement for the next agreement year is created. 
 - An agreement is modified. 
 
+During MVP TAMS will still be a critical part of maintaining agreements and so it is proposed that the TAMS MI Interface be consumed by Callisto to populate the agreement information using an adaptor outside of the Callisto boundary to  
 
 ![Ingest Agreement](../images/ingestAgreement.png)
 
