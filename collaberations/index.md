@@ -29,7 +29,7 @@ The use cases detailed subject to elaboration with Business Analysts are:
 
 ## Submit Time Entry
 
-![Submit Time Entry](../images/submittimeentry.png)
+![Submit Time Entry](../images/submitTimeEntry.png)
 
 ## Communicate Schedule
 
