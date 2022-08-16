@@ -11,7 +11,8 @@ These use cases focus on:
 - The communication of data to subsidiary services required to complete the activity.
 - The propagation of event information to other parts of the system. 
 
-- The use cases detailed subject to elaboration with Business Analysts are:
+
+The use cases detailed subject to elaboration with Business Analysts are:
 
 - Submit Time Entry
 - Communicate Schedule
@@ -28,13 +29,13 @@ These use cases focus on:
 
 ## Submit Time Entry
 
-![Submit Time Entry](./images/submittimeentry.png)
+![Submit Time Entry](../images/submittimeentry.png)
 
 ## Communicate Schedule
 
 ##Ingest Agreement (from TAMS)
 
-![Ingest Agreement](./images/ingestAgreement.png)
+![Ingest Agreement](../images/ingestAgreement.png)
 
 ## Consume Agreement
 
