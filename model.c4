@@ -4,22 +4,23 @@ workspace {
 		enterprise "Home Office" {
 			manager = person "Manager" "" "Manager"
 			planner = person "Planner" "" "Planner" 
-			worker = person "Worker" "" "Worker"
+			enduser = person "Enduser" "" "Enduser"
 			scheduler = person "Scheduler" "" "Scheduler"
 			operations = person "Operations" "" "Operations" 
 		
 			balanceETL = softwaresystem "Balance ETL" "Wraps TAMS and presents balance data in format that Callisto can work with" "Existing System"
-			agreementFacade = softwaresystem "Agreement Facade" "Wraps TAMS and presents data in format that Callisto can work with" "Existing System"
+			tamsAgreementAdaptor = softwaresystem "TAMS Agreement Adaptor" "Wraps TAMS and presents data in format that Callisto can work with" "Existing System"
 			metis = softwaresystem "Metis" "Home Office HR system" "Existing System"
+			tams = softwaresystem "TAMS" "Home Office Time Recording system" "Existing System"
 			drt = softwaresystem "DRT" "Provides a feed of demand information" "Existing System"
 			localSystems = softwaresystem "Local Systems" "Locations have their own systems that hold data that will need to be ingested or integrated with Callisto" "Existing System"
 			monitoringAndAlerting = softwaresystem "Monitoring and Alerting" "Provides operations with insights into Callisto's health at runtime" "Existing System"
 		
 			callistoSystem = softwaresystem "Callisto" "Callisto is a rostering and time recording system. It allows people to plan out shifts and it allows people to record the time they have worked." {
 				scheduling = container "Scheduling" "Allows planners and schedulers to design and roster shifts in order to meet demand"
-				timecard = container "Time Card" "Allows are worker to view their upcoming shifts and to record time worked against their shifts"
+				timecard = container "Time Card" "Allows are enduser to view their upcoming shifts and to record time worked against their shifts"
 				accruals = container "Accruals" "Tracks hours worked againt accruals targets"
-				absence = container "Absence" "Allows a worker or manager to record planned and unplanned absences"
+				absence = container "Absence" "Allows a enduser or manager to record planned and unplanned absences"
 				organisation = container "Organisation" "TODO"
 				referencedata = container "Reference Data" "TODO"
 				person = container "Person" "TODO"			
@@ -27,8 +28,8 @@ workspace {
 		}
 		
 		# relationships between people and software systems
-		agreementFacade -> callistoSystem "sends target balances at the start of a new agreement"
-		balanceETL -> callistoSystem "sends actual target balances at the time of TAMS worker offboarding and Callisto worker onboarding"
+		tamsAgreementAdaptor -> callistoSystem "sends target balances at the start of a new agreement"
+		balanceETL -> callistoSystem "sends actual target balances at the time of TAMS enduser offboarding and Callisto enduser onboarding"
 		metis -> callistoSystem "sends various kinds of personal data that support Callisto's functions"
 		drt -> callistoSystem "sends demand information"
 		localSystems -> callistoSystem "hold a variety of data in locale-specific formats"
@@ -37,12 +38,12 @@ workspace {
 
         # relationships to/from containers
 		planner -> scheduling "designs shifts to meet demand"
-		scheduler -> scheduling "rosters workers onto shfits"
-		worker -> timecard "views shifts and records time worked against shifts"
+		scheduler -> scheduling "rosters endusers onto shfits"
+		enduser -> timecard "views shifts and records time worked against shifts"
 		manager -> timecard "views teams shifts, recorded hours and also makes ad-hoc changes to shifts"
-		worker -> absence "records planned and unplanned absence"
+		enduser -> absence "records planned and unplanned absence"
 		manager -> absence "records planned and unplanned absence for team members"
-		worker -> person "updates working preferences"
+		enduser -> person "updates working preferences"
 		timecard -> accruals "informs of worked hours to allow appropriate actual accrual balances to be adjusted"
 		scheduling -> accruals "informs of planned hours to allow appropriate projected accrual balances to be adjusted"
 		absence -> scheduling "informs of absence hours to trigger any neccesary re-planning or re-rostering"
@@ -78,6 +79,24 @@ workspace {
             autoLayout
         }	
 	
+	        dynamic callistoSystem "ingestAgreement" "Process of ingesting an agreement from TAMS" {
+            tams -> tamsAgreementAdaptor "Consume AHW Review Report"
+			tamsAgreementAdaptor -> person "Get Private Beta Cohort"
+            person -> tamsAgreementAdaptor "Returns Private Beta Cohort"
+			tamsAgreementAdaptor -> person "Get Person Profile"
+            person -> tamsAgreementAdaptor "Person Profile"
+			tamsAgreementAdaptor -> person "Publish New or Modified Agreement"
+			autoLayout
+			}
+
+			
+			dynamic callistoSystem "submitTimeEntry" "Choreography of TimeEntry submission" {
+            enduser -> timecard "Submit Timeentry"
+			timecard -> accruals "Produce TimeEntry event"
+			accruals -> accruals "Update accrual targets"
+			autoLayout
+			
+        }
         
         styles {
             element "Person" {
@@ -85,7 +104,7 @@ workspace {
                 fontSize 22
                 shape Person
             }
-            element "Worker" {
+            element "Enduser" {
                 background #08427b
             }  
             element "Manager" {
