@@ -43,7 +43,7 @@ The drawbacks of the decoupling are clear here although it is thought to be mino
 
 The use of a unique identifier for the triggering action carried as part of the payload would help permit any part of the system that aggregated either Schedule, TimeCard and/or Accruals to perform a consistency check and is recommended.
 
-##Ingest Agreement (from TAMS)
+## Ingest Agreement (from TAMS)
 
 For Callisto to operate during Private Beta and beyond will require data from both the existing Time & Attendance system TAMS as well as from the Metis HR System.  
 
