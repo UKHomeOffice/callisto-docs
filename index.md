@@ -64,7 +64,7 @@ The file [contaners.md](containers.md) lists them out with a brief introduction 
 The [decisions](decisions/) folder holds all of the decisions we've made or are trying to make. Here a decision is a software design choice that addresses a significant requirement. Decisions tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any decisions that might be impacted.
 
 ### Collaborations
-In the [collaborations](collaborations/) folder you'll find documents that describe Callisto workflows and how Containers work together to support the given workflow. Workflows tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any workflows that might be impacted
+[Collaborations](/collaberations/index.md) describe Callisto workflows and how Containers work together to support the given workflow. Workflows tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any workflows that might be impacted
 
 ## Local vs Global
 This repository is indented to hold documentation that is related to Callisto as a whole. Each Container within Callisto is free to make local design decisions. However any significant decisions should also be documented at that local level in a similar fashion to what is done here.
