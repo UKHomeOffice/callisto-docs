@@ -41,15 +41,46 @@ Our preference for the source of this information is:
 2.	TAMS AHW Reports extracted in an electronic format (csv)
 3.	Entered manually in Callisto, essentially anything we are unable to source from above.
 
-Data maintained within Callisto
+#### Data maintained within Callisto
 There is certain data pertinent to a user that needs to be configured within Callisto, for example:
 1.	User preferences how do they want to receive notifications
 2.	Home page content
 3.	Shift preferences (unless imported from TAMS?)
 
+Covering this in more detail:
 
-## METIS data
+### Accruals  
+
+Staff when migrated to Callisto will already have accrued balances against their accrual buckets and this data must be migrated into Callisto This data is expected to be generated from TAMS as TAMS/Kronos already provides a report containing the Percentage AHW balance completed (pensionable / non- pensionable) to SSCL.
+
+It should be ensured that while accruals export and load process start, time-entry feature in as-is TAMS should be disabled for the employees of the selected port. 
+ 
+### Agreement 
+An agreement is the contract between the HO and the employee to work on a non standard working pattern for a years period. the elements that constitute the agreement give the employee a % uplift in their basic salary, these elements covers the 9 building blocks: 
+
+To track accrual balances for an individual against their agreement this information must be imported (or entered) into Callisto.
+It is proposed that the TAMS MI Interface be consumed by Callisto to populate this information.
+
+## Onboarding process
+
+It is planned that staff will be migrated to Callisto during Private Beta and beyond. The process for new staff migrating after initial load is like onboarding and is, as follows:
+
+1.	Staff to be migrated are added to the Callisto via the import of a CSV file which will update their PersonProfile to indicate that are 'Onboarding'.
+2.	Callisto will process the INT006 and find the new staff in this file and create a User Profile for them. Users in this status cannot enter time until the onboarding process is completed.
+3. For AHW workers their accrual targets and accrual balances will be imported from pre-existing TAMS reports.
+4.	An admin or manager adds the user to the organisational hierarchy, configures skills and enters a Line Manager (if not imported from TAMS).
+5.	User can login and configure their personal preferences.
+
+
+
+##METIS data
+
+![Ingest METIS Person Data](../images/ingestmetisint006persondata.png)
 	
-## TAMS data
+##TAMS data
+
+![Ingest TAMS Accrual Targets & Balances](../images/ingesttamsaccrualreports.png)
 	
-## Manager configuration
+##Manager configuration
+
+![Manually Configure User](../images/manuallyconfigurepersonprofile.png)
