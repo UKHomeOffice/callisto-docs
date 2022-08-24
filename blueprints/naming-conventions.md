@@ -5,7 +5,7 @@ RESTful resource and the name of the Database table that represents the new enti
 
 # RESTful Resources
 RESTful resources will be defined using the @Resource annotation. These resources should use kebab case as the naming
-convention. I.E
+convention, e.g.
 
 `@Resource(path = "time-period-type")`
 
