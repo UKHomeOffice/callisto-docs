@@ -73,14 +73,14 @@ It is planned that staff will be migrated to Callisto during Private Beta and be
 
 
 
-##METIS data
+### METIS data
 
 ![Ingest METIS Person Data](../images/ingestmetisint006persondata.png)
 	
-##TAMS data
+### TAMS data
 
 ![Ingest TAMS Accrual Targets & Balances](../images/ingesttamsaccrualreports.png)
 	
-##Manager configuration
+### Manager configuration
 
 ![Manually Configure User](../images/manuallyconfigurepersonprofile.png)
