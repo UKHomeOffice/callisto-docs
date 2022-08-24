@@ -14,44 +14,16 @@ These use cases focus on:
 
 The use cases detailed subject to elaboration with Business Analysts are:
 
+- [Onboarding a user](onboardinguser.md)
 - [Submit Time Entry](submittimeentry.md)
 - [Communicate Schedule](communicateschedule.md)
-- Onboarding
+- [Ingest Agreement (from TAMS)](ingestagreement.md)
 - Ingest Agreement (from TAMS)
 - Consume Agreement
-- Onboarding a user
-	- METIS data
-	- TAMS data
-	- Manager configuration
 - Absences
 	- Callisto flow
 	- METIS communication (to & from)
 
-Each of these will be documented further below.
-
- 
-
-
-
-## Ingest Agreement (from TAMS)
-
-For Callisto to operate during Private Beta and beyond will require data from both the existing Time & Attendance system TAMS as well as from the Metis HR System.  
-
-This is an interim MVP solution, the intention is that in the future agreements will be built within the ‘Agreements Service’ which is logically part of Metis, the Home Office HR System. For this reason, it is critical that the agreements service is entirely separately from core Callisto. 
-
-The agreement data must be accessible to Callisto to allow it to track accrual balances for an individual against their agreement as this is their target. 
-
-This information must be imported (or entered) into Callisto when: 
-
-An individual is onboarded into Callisto as part of the private Beta onboarding process. 
-
-- An individual is onboarded into Callisto as part of the private Beta onboarding process
-- A new agreement for the next agreement year is created. 
-- An agreement is modified. 
-
-During MVP TAMS will still be a critical part of maintaining agreements and so it is proposed that the TAMS MI Interface be consumed by Callisto to populate the agreement information using an adaptor outside of the Callisto boundary to  
-
-![Ingest Agreement](../images/ingestAgreement.png)
 
 ## Consume Agreement
 
