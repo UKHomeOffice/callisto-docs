@@ -102,6 +102,11 @@ METIS is the master of much of the person profile. In Private Beta this will be 
 | HR Line Manager Staff Number       |                                                                                                                                  | How will we manage the difference between Line and Duty Manager, (Metis Absences uses Line Manager, and an escalation if LM does not respond)                                                                                                                                                                                     |
 | Email Address                      |                                                                                                                                  | For Notifications?                                                                                                                                                                                                                                                                                                                |
 
+Our preferred integration pattern for Metis to Callisto messages is the publish & subscribe design pattern using a messaging bus, such as Kafka that Metis can publish events However, whilst this cannot be achieved witihin the scope of Private Beta the introduction of a METIS Adaptor allows us to simply replace the adaptor once full asynchronous METIS interfaces can be built.
+
+This is more efficient than Callisto polling Metis looking for changes that have occurred as well as guaranteeing the integrity of the message passing mechanism. In addition, this approach eliminates tight coupling of Metis & Callisto allowing either system to operate without the other.
+
+
 ![Ingest METIS Person Data](../images/ingestmetisint006persondata.png)
 	
 ### TAMS data
