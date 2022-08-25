@@ -13,4 +13,4 @@ convention, e.g.
 The database table resources will be defined using the @Entity annotation. These resources should use snake-case as the 
 naming convention. I.E 
 
-`@Entity(name = "time_period-type")`
+`@Entity(name = "time_period_type")`
