@@ -1,7 +1,7 @@
 # Record time
 Jira ref - 
 
-![Callisto containers](./images/timecard-container.png)
+![Callisto containers](./../images/timecard-container.png)
 
 The recording of time involves the creation and/or modification of `TimeEntry` resources. A `TimeEntry` can be created via three routes -
 
