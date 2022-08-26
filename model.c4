@@ -79,7 +79,7 @@ workspace {
             autoLayout
         }	
 	
-	        dynamic callistoSystem "ingestAgreement" "Process of ingesting an agreement from TAMS" {
+		dynamic callistoSystem "ingestAgreement" "Process of ingesting an agreement from TAMS" {
             tams -> tamsAgreementAdaptor "Consume AHW Review Report"
 			tamsAgreementAdaptor -> person "Get Private Beta Cohort"
             person -> tamsAgreementAdaptor "Returns Private Beta Cohort"
@@ -87,10 +87,10 @@ workspace {
             person -> tamsAgreementAdaptor "Person Profile"
 			tamsAgreementAdaptor -> person "Publish New or Modified Agreement"
 			autoLayout
-			}
+		}
 
 			
-			dynamic callistoSystem "submitTimeEntry" "Choreography of TimeEntry submission" {
+		dynamic callistoSystem "submitTimeEntry" "Choreography of TimeEntry submission" {
             enduser -> timecard "Submit Timeentry"
 			timecard -> accruals "Produce TimeEntry event"
 			accruals -> accruals "Update accrual targets"

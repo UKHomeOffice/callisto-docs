@@ -1,5 +1,6 @@
 
 
+
 # Callisto's Containers
 
 Callisto as a system is made up of a number of loosely coupled containers that combine to deliver the various workflows that Callisto supports.
@@ -10,22 +11,42 @@ Callisto as a system is made up of a number of loosely coupled containers that c
 ## TimeCard
 At it's core the TimeCard container allows people to view time that they're been planned to work and to enter time that they've worked. 
 
+![Callisto containers](./images/timecard-container.png)
+
+### Significant Use cases
+
+ - [record time](/collaberations/record-time.md)
+ - ad-hoc changes to shift
+ - view upcoming shifts
+
 ### Resources
+Resources are divided into two categories
+
+ - public - exposed via the TimeCard container's RESTful API
+ - private - not visible outside of the boundary of the TimeCard container. Used internally.
+
+#### Public 
 - `TimeEntry` -  the actual recording of hours worked by an employee. In this context the employee is said to be the owner of the `TimeEntry`
 - `Note` -  used to carry arbitrary textual information about a date
 - `FlexChange` - **TODO**
 - `FlexChangeNote` - **TODO**
+- `Team` - each team has a manager (a `Person`) and a set of members (`Person` instances). A manager is allowed to view and edit the `TimeEntry` resources for any one of the members of their team. 
+- `TeamMember` - collects together a `Person`, their `Team` and the role they have within the team (i.e. `member` or `manager`)
+
+#### Private 
+- `Person` - used to hold data relevant when determining what types of time period a given person should be able to enter. Also used in meal-break calculations when recording time 
 
 ![timecard-payload-model.png](./images/timecard-payload-model.png)
 
 ### Reference data
 - `TimePeriodType` - a way to categorise time periods (e.g. a shift, a standard rest day)
+- `TeamMemberType` - differentiates different roles that a person may have within a given `Team`
 
 ### Events produced
 - `TimeEntry` - an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
 
 ### Events consumed
-- [`RosterEntry`] - used to set up an initial default `TimeEntry` so that the rostered person does not have to manually record their time if they work the hours that have been rostered
+- [`ScheduledEntry`] - used to set up an initial default `TimeEntry` so that the rostered person does not have to manually record their time if they work the hours that have been rostered
 
 
 ### Clients

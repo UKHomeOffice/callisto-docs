@@ -35,7 +35,7 @@ Boiling it down, Callisto supports six key areas of functionality
 
 * Planning - a planner wants to design shifts that are going to meet the demand for the location that the shift will cover. 
 * Schedulnig - a scheduler wants to assign people to shifts (roster). The shift will be designed such that it meets demand. A scheduer makes sure that people are assigned to a shift(s) to satisy the demand that the shift has been designed to meet
-* Recodring time - a worker wants to record time that they have worked against a shift that they have worked. Sometimes a worker will want to record overtime too.
+* [Recodring time](collaberations/record-time.md) - a worker wants to record time that they have worked against a shift that they have worked. Sometimes a worker will want to record overtime too.
 * Recodring absence - a workder wants to record some planned leave. A worker or a manager wants to record some unplanned (sick) leave. You can imagine that this information is useful to people performing planning and scheduling
 * ad-hoc changes to shift - sometimes last minute changes need to be made to a shift. These changes fall outside of the routine planning and scheduling acitvities and are useualy done by a line manager in response to a rapdily changing situation
 * view upcoming shifts - a worker needs to be able to view what shofts they have been rostered on to in order align their working hours with their commitments outside of work
