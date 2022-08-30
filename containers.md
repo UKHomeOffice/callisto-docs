@@ -8,7 +8,7 @@ Callisto as a system is made up of a number of loosely coupled containers that c
 ## TimeCard
 At it's core the TimeCard container allows people to view time that they're been planned to work and to enter time that they've worked. 
 
-![Callisto containers](./../images/timecard-container.png)
+![Timecard container](./images/timecard-container.png)
 
 ### Significant Use cases
 
