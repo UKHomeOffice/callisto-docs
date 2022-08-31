@@ -52,8 +52,8 @@ This repository holds five types of information. They are presented below in the
 ### Characteristics
 There are certain [characteristics](characteristics.md) that we want Callisto to have. Our design is borne of a a need to embody these characteristics as well as the functional requirements found in Jira
 
-### Landscape
-[landscape.md](landscape.md) shows the Users and external systems that interact with Callisto
+### Context
+[comtext.md](context.md) shows the Users and external systems that interact with Callisto
 
 ### Containers
 We follow the single responsibility principle as far as is pragmatic so you'll see that the Callisto system is make up of a set of collaborating Containers. 
@@ -63,8 +63,8 @@ The file [containers.md](containers.md) lists them out with a brief introduction
 ### Decisions
 The [decisions](decisions/) folder holds all of the decisions we've made or are trying to make. Here a decision is a software design choice that addresses a significant requirement. Decisions tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any decisions that might be impacted.
 
-### Collaborations
-[Collaborations](/collaberations/index.md) describe Callisto workflows and how Containers work together to support the given workflow. Workflows tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any workflows that might be impacted
+### Choreography
+[choreography](/choreography/index.md) describe Callisto workflows and how Containers work together to support the given workflow. Workflows tie back to Jira so that we have requirements traceability and if a ticket changes in Jira we can identify any workflows that might be impacted
 
 ## Local vs Global
 This repository is indented to hold documentation that is related to Callisto as a whole. Each Container within Callisto is free to make local design decisions. However any significant decisions should also be documented at that local level in a similar fashion to what is done here.

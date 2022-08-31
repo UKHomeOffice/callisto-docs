@@ -1,8 +1,8 @@
-# Callisto's landscape
+# Callisto's contextual landscape
 
 The Callisto system does not operate in isolation. It interacts with a number of different external systems and it supports a number of different user roles.
 
-![Callisto landscape](./images/landscape.png)
+![Callisto context](./images/context.png)
 
 ## User roles
 See index.md
