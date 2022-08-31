@@ -22,7 +22,7 @@ Resources are divided into two categories
  - public - exposed via the TimeCard container's RESTful API
  - private - not visible outside of the boundary of the TimeCard container. Used internally.
 
-#### Public 
+#### <a name="timecard-resources-public">Public</a> 
 - `TimeEntry` -  the actual recording of hours worked by an employee. In this context the employee is said to be the owner of the `TimeEntry`
 - `Note` -  used to carry arbitrary textual information about a date
 - `FlexChange` - **TODO**
@@ -39,12 +39,11 @@ Resources are divided into two categories
 - `TimePeriodType` - a way to categorise time periods (e.g. a shift, a standard rest day)
 - `TeamMemberType` - differentiates different roles that a person may have within a given `Team`
 
-### Events produced
+### <a name="timecard-events-produced">Events produced</a>
 - `TimeEntry` - an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
 
-### Events consumed
+### <a name="timecard-events-consumed">Events consumed</a>
 - [`ScheduledEntry`] - used to set up an initial default `TimeEntry` so that the rostered person does not have to manually record their time if they work the hours that have been rostered
-
 
 ### Clients
 #### Users
