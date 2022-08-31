@@ -23,20 +23,5 @@ The use cases detailed subject to elaboration with Business Analysts are:
 - Absences
 	- Callisto flow
 	- METIS communication (to & from)
+- Consume demand
 
-
-## Consume Agreement
-
-## Onboarding a user
-
-## METIS data
-
-## TAMS data
-
-## Manager configuration
-
-## Absences
-
-## Callisto flow
-
-## METIS communication (to & from)
