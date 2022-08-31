@@ -53,7 +53,7 @@ This repository holds five types of information. They are presented below in the
 There are certain [characteristics](characteristics.md) that we want Callisto to have. Our design is borne of a a need to embody these characteristics as well as the functional requirements found in Jira
 
 ### Context
-[comtext.md](context.md) shows the Users and external systems that interact with Callisto
+[context.md](context.md) shows the Users and external systems that interact with Callisto
 
 ### Containers
 We follow the single responsibility principle as far as is pragmatic so you'll see that the Callisto system is make up of a set of collaborating Containers. 
