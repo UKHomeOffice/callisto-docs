@@ -99,4 +99,8 @@ The following diagram details the approach but other integrations will be simila
 
 ![Ingest METIS Person Data](../images/ingestmetisint006persondata.png)
 	
+# To Do
 
+1. Define how operational hierarchy vs organizational hierarchy are different - terminology
+2. Notion of pre-requisites is very worthwhile calling out eg org hierarchy needs to be there before we import a person. I'd be inclined to make that point quite strongly - with headers perhaps
+3. Also have a summary of what is needed from a person perspective before that person can enter time or be rostered etc. Saves people having to dive straight into the detail that's been added around Accruals etc
