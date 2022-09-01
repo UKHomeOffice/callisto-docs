@@ -41,26 +41,36 @@ Although subject to change the process is expected to follow the steps below
 
 Further elaboration on the Scheduling data will be found in the Scheduler detailed design [TODO]
 
-### Person
+### Onboarding process
+
+1. Once staff to be onboarded to Callisto are identified the process is initiated by creating their skeleton Personal Profile in Callisto with the important information being their METIS staff number. To make this easier it is expected that Callisto will import a CSV file to indicate that are 'Onboarding'.
+2. Callisto will populate the required elements of their Personal Profile by processing information produced by the master for such data, METIS. 
+3. For AHW workers their accrual targets and accrual balances will be imported.
+4. An admin or manager adds the user to the organisational hierarchy, configures skills and enters any missing information not supported by the integration.
+5. User can login and configure their personal preferences.
+
+#### Person
 
 The onboarding process will be initiated by identifying the Private Beta cohort of users and building a list within Callisto consisting of their Metis Staff Number. Ideally this will be an import of a csv file supplied by the port being onboarded.
 
 We do need to source information to populate Callisto for all we need in Private Beta. A definition of the data required [TODO]
 
-#### Person Profile
+##### Person Profile
 
 Callisto requires information about a Person in order to understand their contractual obligations such as hours worked, full time or part-time, modernised or pre-modernised contracts in order to schedule them and also to correctly calculate important aspects such as their accruals and meal breaks. 
 
 METIS is the master for this information but the nature of this interface is not yet defined but may either be by ingesting same file that TAMS currently ingests to achieve the same purpose (an interface known as INT006) or by using the new enhanced Integration Mechanism (191/192)
 
-#### Agreement Targets
+##### Agreement Targets
 
 An agreement is the contract between the HO and the employee to work on a non standard working pattern for a years period. the elements that constitute the agreement give the employee a % uplift in their basic salary, these elements covers the 9 building blocks: 
 
 To track accrual balances for an individual against their agreement this information must be imported (or entered) into Callisto.
 It is proposed that the TAMS MI Interface be consumed by Callisto to populate this information.
 
-### Accrual Balances
+The preliminary design for ingesting the agreement is detailed in the [TAMS Agreement Adaptor](./containers.md#tams-agreement-adapter)
+
+#### Accrual Balances
 
 Staff when migrated to Callisto will already have accrued balances against their accrual buckets and this data must be migrated into Callisto This data is expected to be generated from TAMS as TAMS/Kronos already provides a report containing the Percentage AHW balance completed (pensionable / non- pensionable) to SSCL.
 
@@ -72,15 +82,7 @@ There is certain data pertinent to a user that needs to be configured within Cal
 2.	Home page content
 3.	Shift preferences (unless imported from TAMS?)
 
-## Onboarding process
 
-It is planned that staff will be migrated to Callisto during Private Beta and beyond. The process for new staff migrating after initial load is like onboarding and is, as follows:
-
-1. The staff to be onboarded to Callisto Personal Profile for staff to be migrated are added to the Callisto via the import of a CSV file which will update their PersonProfile to indicate that are 'Onboarding'.
-2. Callisto will process the INT006 and find the new staff in this file and create a User Profile for them. Users in this status cannot enter time until the onboarding process is completed.
-3. For AHW workers their accrual targets and accrual balances will be imported from pre-existing TAMS reports.
-4. An admin or manager adds the user to the organisational hierarchy, configures skills and enters a Line Manager (if not imported from TAMS).
-5. User can login and configure their personal preferences.
 
 
 Our preferred integration pattern for Metis to Callisto messages is the publish & subscribe design pattern using a messaging bus, such as Kafka that Metis can publish events However, whilst this cannot be achieved witihin the scope of Private Beta the introduction of a METIS Adaptor allows us to simply replace the adaptor once full asynchronous METIS interfaces can be built.
