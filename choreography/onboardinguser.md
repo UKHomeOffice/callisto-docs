@@ -39,7 +39,7 @@ Although subject to change the process is expected to follow the steps below
 5.	Once port staff have been onboarded the previous roster TAMS will be manually retrieved and it will be entered as shift-constraints into Callisto    
 7.	Once all shift-constraints are generated, new rosters will be generated.
 
-Further elaboration on the Scheduling data will be found in the Scheduler detailed design [TODO]
+Further elaboration on the Scheduling data required  will be found in the [Scheduler container definition](../containers.md#scheduler).  
 
 ### Onboarding process
 
