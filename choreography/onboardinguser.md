@@ -6,7 +6,7 @@ HO Border force uses “Time and Attendance Management System (TAMS)” for capt
 
 The Private beta phase involves inviting a limited number of people to use the service so that we can get feedback and improve it. Once you’ve improved the service and are confident you can run it at scale, you take an assessment to move into public beta. This approach allows the system to be improved and enhanced using the lessons learnt during Private Beta mitigating the risk of a wider rollout failing.
 
-Once the pre-beta test period has ended and the service has successfully met the acceptance criteria for transition into the private beta phase, then one of representative ports (such as Liverpool) will migrate to Callisto for the purposes of time recording, rostering and scheduling. Thereafter at intervals the private beta service will be released to other ports as part of a phased roll out of the private beta service. 
+Once the pre-beta test period has ended and the service has successfully met the acceptance criteria for transition into the private beta phase, one of representative ports (such as Liverpool) will migrate to Callisto for the purposes of time recording, rostering and scheduling. Thereafter at intervals the private beta service will be released to other ports as part of a phased roll out of the private beta service. 
 
 To function Callisto requires similar data feeds to TAMS so that it knows about the attributes of a Person, their contract and, if applicable their Annualised Working Hour (AHW) agreement such that Callisto can collect the relevant data and perform the necessary calculations. For the purposes of onboarding there are two systems which are the master for much of the data required.
 
@@ -26,12 +26,20 @@ The process of taking an empty Callisto database and making it live is a signifi
 
 ### Ports
 
+During Private Beta it is important that all users in a given location, for example, a port are being scheduled and recording their time using the same system. This approach means that coverage of activities across a location can be seen on one system and that user and managers are using the same system simplifying approvals and other processes.
+
+The process of onboarding a cohort of users at a single location requires a significant amount of effort as components of Callisto require data modelling the ports operational organisation structure and working patterns before a user can be scheduled.
+
+Although subject to change the process is expected to follow the steps below
+
 1.	Once a port is selected for migration, employees working at that port will be given notice about the move into Callisto.
-2.	Using a combination of manual effort and import of existing files, team profile and operational hierarchy will be built in Callisto for the selected port(s).  
-3.	It is intended that planners have access to the system to build shift patterns and shifts.
-4.	New shift template in to-be systems should be created manually.
-5.	The previous roster detail for each employee for the selected port from as-is TAMS will be manually retrieved and it will be entered as shift-constraint into Callisto    
-6.	Once all shift-constraints are generated, new rosters will be generated in to-be system.  
+2.	The ports operational hierarchy will be built in Callisto for the selected port. 
+3.	Planners will have early access to Callisto to build shift patterns and shifts manually
+4.	New shift templates in Callisto will be created manually.
+5.	Once port staff have been onboarded the previous roster TAMS will be manually retrieved and it will be entered as shift-constraints into Callisto    
+7.	Once all shift-constraints are generated, new rosters will be generated.
+
+Further elaboration on the Scheduling data will be found in the Scheduler detailed design [TODO]
 
 ### Person
 
