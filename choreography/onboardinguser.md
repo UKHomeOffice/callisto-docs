@@ -2,17 +2,20 @@
 
 ## Overview
 
-HO Border force uses “Time and Attendance Management System (TAMS)” for capturing time & attendance information from the operational areas and for validating that the correct Annualised Hours Working (AHW) payments are made to staff.
+HO Border force uses “Time and Attendance Management System (TAMS)” for capturing time & attendance information from the operational areas and for validating that the correct Annualised Hours Working (AHW) payments are made to staff. TAMS does not satisfy all of Border Forces operational needs leading to 'off system' workarounds including spreadsheets being built to plug the gaps and so a brand-new system, Callisto is being developed by DDaT to replace TAMS.
 
-Private beta of Callisto, the proposed TAMS replacement requires migration of users and associated information into Callisto from various systems and interfaces to the consumers of Callisto data. 
+The Private beta phase involves inviting a limited number of people to use the service so that we can get feedback and improve it. Once you’ve improved the service and are confident you can run it at scale, you take an assessment to move into public beta. This approach allows the system to be improved and enhanced using the lessons learnt during Private Beta mitigating the risk of a wider rollout failing.
 
-Across Border Force only a small percentage of users will be in Callisto and so Metis Integration must be able to cope with data from either TAMS or Callisto.
+Once the pre-beta test period has ended and the service has successfully met the acceptance criteria for transition into the private beta phase, then one of representative ports (such as Liverpool) will migrate to Callisto for the purposes of time recording, rostering and scheduling. Thereafter at intervals the private beta service will be released to other ports as part of a phased roll out of the private beta service. 
 
-Whilst the process described here is principally for onboarding a user from TAMS to Callisto for the start of Private Beta, once running there are multiple "business as usual" user journeys which must be considered. The majority of these fall into the category of a change in a users contracts with some examples being:
+To function Callisto requires similar data feeds to TAMS so that it knows about the attributes of a Person, their contract and, if applicable their Annualised Working Hour (AHW) agreement such that Callisto can collect the relevant data and perform the necessary calculations. For the purposes of onboarding there are two systems which are the master for much of the data required.
 
-- User leaves Private Beta Cohort to join a Location not yet in Callisto
-- User in Private Beta leaves AHA to move to Flexi working
-- User in Private Beta leaves HO
+These systems are:
+
+1. METIS – Home Office HR system responsible for and master of Person data including contractual agreement, AHW agreement, absences, and salary.
+2. TAMS – TAMS will maintain and hold an individuals Agreement information, namely their accrual targets and their to-date balances against those agreements. 
+
+This section of the High Level design is intended to detail how the relevant information will be obtained from these external systems and stored in Callisti. Whilst the process described is principally for onboarding a user from TAMS to Callisto for the start of Private Beta, once running there are multiple "business as usual" user journeys which must be considered which are detailed here [TODO]
 
 ## Private Beta Migration Approach
 
