@@ -59,7 +59,9 @@ We do need to source information to populate Callisto for all we need in Private
 
 Callisto requires information about a Person in order to understand their contractual obligations such as hours worked, full time or part-time, modernised or pre-modernised contracts in order to schedule them and also to correctly calculate important aspects such as their accruals and meal breaks. 
 
-METIS is the master for this information but the nature of this interface is not yet defined but may either be by ingesting same file that TAMS currently ingests to achieve the same purpose (an interface known as INT006) or by using the new enhanced Integration Mechanism (191/192)
+METIS is the master for this information but the nature of this interface is not yet defined but may either be by ingesting same file that TAMS currently ingests to achieve the same purpose (an interface known as INT006) or by using the new enhanced Integration Mechanism (191/192).
+
+The person profile will reside on the [Person Container](../containers.md#person) described here 
 
 ##### Agreement Targets
 
