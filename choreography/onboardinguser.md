@@ -70,11 +70,13 @@ It is proposed that the TAMS MI Interface be consumed by Callisto to populate th
 
 The preliminary design for ingesting the agreement is detailed in the [TAMS Agreement Adaptor](../containers.md#tams-agreement-adapter)
 
-#### Accrual Balances
+##### Accrual Balances
 
 Staff when migrated to Callisto will already have accrued balances against their accrual buckets and this data must be migrated into Callisto This data is expected to be generated from TAMS as TAMS/Kronos already provides a report containing the Percentage AHW balance completed (pensionable / non- pensionable) to SSCL.
 
 It should be ensured that while accruals export and load process start, time-entry feature in as-is TAMS should be disabled for the employees of the selected port. 
+
+The preliminary design for ingesting the accrual balances is detailed in the [TAMS Agreement Adaptor](../containers.md#tams-agreement-adapter)
  
 #### Data maintained within Callisto
 There is certain data pertinent to a user that needs to be configured within Callisto, for example:
@@ -83,19 +85,16 @@ There is certain data pertinent to a user that needs to be configured within Cal
 3.	Shift preferences (unless imported from TAMS?)
 
 
+# Integration Patterns
 
+Our preferred integration pattern for external systems passing data to Callisto is the publish & subscribe design pattern using a messaging bus, such as Kafka to which the external system can publish events. 
 
-Our preferred integration pattern for Metis to Callisto messages is the publish & subscribe design pattern using a messaging bus, such as Kafka that Metis can publish events However, whilst this cannot be achieved witihin the scope of Private Beta the introduction of a METIS Adaptor allows us to simply replace the adaptor once full asynchronous METIS interfaces can be built.
+In the case of acquiring Person Profile information from METIS whilst this cannot be achieved witihin the scope of Private Beta the introduction of a METIS Adaptor allows us to simply replace the adaptor once full asynchronous METIS interfaces can be built.
 
 This is more efficient than Callisto polling Metis looking for changes that have occurred as well as guaranteeing the integrity of the message passing mechanism. In addition, this approach eliminates tight coupling of Metis & Callisto allowing either system to operate without the other.
 
+The following diagram details the approach but other integrations will be similar in nature and philosophy.
 
 ![Ingest METIS Person Data](../images/ingestmetisint006persondata.png)
 	
-### TAMS data
 
-![Ingest TAMS Accrual Targets & Balances](../images/ingesttamsaccrualreports.png)
-	
-### Manager configuration
-
-![Manually Configure User](../images/manuallyconfigurepersonprofile.png)
