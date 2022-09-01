@@ -68,7 +68,7 @@ An agreement is the contract between the HO and the employee to work on a non st
 To track accrual balances for an individual against their agreement this information must be imported (or entered) into Callisto.
 It is proposed that the TAMS MI Interface be consumed by Callisto to populate this information.
 
-The preliminary design for ingesting the agreement is detailed in the [TAMS Agreement Adaptor](./containers.md#tams-agreement-adapter)
+The preliminary design for ingesting the agreement is detailed in the [TAMS Agreement Adaptor](../containers.md#tams-agreement-adapter)
 
 #### Accrual Balances
 
