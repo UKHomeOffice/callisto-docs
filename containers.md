@@ -1,3 +1,5 @@
+
+
 # Callisto's Containers
 
 Callisto as a system is made up of a number of loosely coupled containers that combine to deliver the various workflows that Callisto supports.
@@ -41,6 +43,7 @@ Resources are divided into two categories
 
 ### <a name="timecard-events-produced">Events produced</a>
 - `TimeEntry` - an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
+- `FlexChange` - an event that holds data about a change to a planned period of work
 
 ### <a name="timecard-events-consumed">Events consumed</a>
 - [`ScheduledEntry`] - used to set up an initial default `TimeEntry` so that the rostered person does not have to manually record their time if they work the hours that have been rostered
@@ -66,29 +69,40 @@ The Scheduler container is used by planners to design and staff (roster) shifts.
 ## Accruals
 In Border Force many people are on what is known as an Annualised Hours Agreement (AHA). In short each person will have a set of target hours that they need to work in order to gain an uplift in their basic pay. The Accruals container tracks how people are performing against those targets.
 
+![accruals-overview.png](../../images/accruals-overview.png)
+
+The diagram above shows the Accruals container in the centre with the other Callisto containers that it collaborates with. In addition the diagram shows the different types of end user who will interact with the container through its RESTful API.
+
+Each of these facets of the container are discussed in more detail below.
+
+**TODO** - explanation of diagram 
+
 ### Resources
-- No resources are exposed
+- TODO
 
 ### Reference data
-- No Reference data exposed
+- TODO
 
 ### Events produced
 - `AHAModuleBalance` - an event that holds the balance of a person's AHA Module at a given point in time
 
 ### Events consumed
 - [`AHAModuleTarget`](#tamsAgreementAdapter_ahaModuleTargetEvent) - used to set up an initial balance for the given AHA Module
-- `TimeEntry` - feeds into the calculation of zero or more AHA Module balances
-- an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
+- [`TimeEntry`](#timecard-events-produced) - feeds into the calculation of zero or more AHA Module balances it is an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
+- [`FlexChange`](#timecard-events-produced) - feeds into the calculation of zero or more AHA Module balances it is an event that holds data about a change to a planned period of work
 - [`AHAModuleBalance`](#tamsAgreementAdapter_ahaModuleBalanceEvent) - Capture's a persons AHA Module balance. If a person is to be onboarded onto Callisto in the middle of their agreement period then their balances at the time of the onboarding need to be known so that Accruals can set a balance baseline
 
 ### Clients
 #### Users
-- No end users. The Accruals container can be thought of as a background (or daemon) process
-
+- owner - the person who has worked the time that is being tracked by Accruals
+- manager - looks after a team of  `Accruals` owners
+ 
 #### Containers
 - [Scheduler](#scheduler) - consumes the `AHAModuleBalance` event stream
 
-[Accruals container definition](https://github.com/)
+[Accruals container definition](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/main/docs/index.md)
+
+
 
 ## Person 
 Holds data about a person that other containers in Callisto need such as what skills a person has and what their preferred hours of working are. Rather than duplicating this data the Person container is the single source of truth.
@@ -129,7 +143,7 @@ In Border Force many people are on what is known as an Annualised Hours Agreemen
 - No Reference Data exposed
 
 ### Events produced
-- <a name="tamsAgreementAdapter_ahaModuleTargetEvent">`AHAModuleTarget`</a> - an event that holds the target associated with a person's AHA Module. A target has a time period in which it is effective
+- <a name="tamsAgreementAdapter_ahaAgreementEvent">`AHAAgreement`</a> - an event that holds an AHA Agreement resource. An AHA Agreement is linked to a given `Person`. Amongst other things it contains AHA modules purchased by the person and their targets, the effective date of the AHA Agreement and also the person's Flex change and RSA bands
 - <a name="tamsAgreementAdapter_ahaModuleBalanceEvent">`AHAModuleBalance`</a> - an event that holds the balance associated with a person's AHA Module. A balance has a date and time at which it was current
 
 ### Events consumed
