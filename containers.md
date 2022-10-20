@@ -75,8 +75,6 @@ The diagram above shows the Accruals container in the centre with the other Call
 
 Each of these facets of the container are discussed in more detail below.
 
-**TODO** - explanation of diagram 
-
 ### Resources
 - TODO
 
