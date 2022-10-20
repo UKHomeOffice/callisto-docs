@@ -34,6 +34,8 @@ Azure AD (POISE)
 1. Callisto will forgo the ability to have a launch area from within Metis
 
 ## Notes
-- Azure AD and Oracle IDCS (Metis) are effectively equivalent in the user base that they manage as Oracle IDCS syncs with Azure AD
+- Azure AD and Oracle IDCS (Metis) are effectively equivalent in the user base that they manage as Oracle IDCS syncs with Azure AD in this way Callisto does not loose user reach by adopting Azure AD.
+
+Oracle IDCS keeps Azure AD up to date with joiners, movers and leavers via 1191 and 1192 interfaces. In effect a user accesses Metis through their POISE identity.
 
 
