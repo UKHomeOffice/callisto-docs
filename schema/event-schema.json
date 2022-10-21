@@ -1,0 +1,19 @@
+{
+  "$id": "https://callisto.digital.homeoffice.gov.uk/event.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Event",
+  "description": "Describes an action and the Callisto resource that it was performed against",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+	  "enum": ["create", "update", "delete"],
+      "description": "The kind of operation that was performed on the resource"
+	  },
+    "resource": {
+      "type": "object",
+      "description": "The resource that was the subject of the action"
+    }
+  },
+  "required": ["action", "resource"]
+}
