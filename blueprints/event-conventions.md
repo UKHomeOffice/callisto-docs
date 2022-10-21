@@ -32,5 +32,5 @@ source - [`event-schema.json`](../schema/event-schema.json)
 
 
 ## Further reading
-https://martinfowler.com/articles/201701-event-driven.html
-https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/
+- https://martinfowler.com/articles/201701-event-driven.html
+- https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/
