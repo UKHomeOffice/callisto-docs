@@ -1,4 +1,4 @@
-# Event publication
+# Event publishing and event consuming
 
 Events in Callisto correspond to changes that happen to resources that have been exposed via the various RESTful endpoints.
 
@@ -11,8 +11,20 @@ Callisto event producers are in charge of publishing what they see as significan
 - update - to be used when an existing Resource has been modified (this includes changes to contained child Resources where that change might be a deletion of a given child Resource)
 - delete - to be used when an existing Resource has been removed. No further updates to that Resource are expected (**TODO** - what about undo?)
 
-## Register Resource schema
-**TODO** - in order to support deserialisation and validation of the `resource.content` the consumer needs to know what the schema of the content is. Each container shuld publish schema (in Avro) - can we have Avro solve this for us without having to invent a bespoke approach? 
+## Event publisher
+As a publisher of an event you must decide three things
+
+1. Which lifecycle events to publish
+2. Whether to use the full Resource or a ResourceReference in the `resource.content` of your events (or use a combination of both depending on the situation) 
+3. Register the schema for the Resource and make it's machine readable definition available across Callisto so that other containers can read that definition
+4. Identify the [topic that the event will be published to](./topic-creation.md)
+
+## Event consumer
+As a consumer of an event you must decide three things
+
+1. Identify the topic that the event will be consumed from **TODO** - need a topic and event registry (asynapi.io?)
+2. Ensure that you can deserialise the `resource.content` from the events published to the topic (**TODO** - can Avro help us here)
+3. If needs be ensure that you have a means to ignore events that you are not interested in
 
 
 ## Event model
@@ -60,7 +72,12 @@ Note that the event is flexible in terms of the way it can carry the effected Re
             },
              "version": {
             	"type": "number"
-            } 
+            },
+			"schema": {
+				"description": "The schema that the referenced Resource conforms to. Used by consumers for deserialisation and validation",
+				"type": "string",
+				"format": "uri"
+			}			
          },
          "required": ["tenantId", "id", "version"]
     },
@@ -73,9 +90,6 @@ Note that the event is flexible in terms of the way it can carry the effected Re
 }
 ```
 source - [`event-schema.json`](../schema/event-schema.json)
-
-## Out of scope
-- Retrieval of Resource from the ResourceReference eg a URL for the resource and a URL to the schema that the Resource conforms to
 
 ## Further reading
 - https://martinfowler.com/articles/201701-event-driven.html

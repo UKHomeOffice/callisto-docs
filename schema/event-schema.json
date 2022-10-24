@@ -40,7 +40,12 @@
             	"type": "number"
             } 
          },
-         "required": ["tenantId", "id", "version"]
+		 "schema": {
+			"description": "The schema that the referenced Resource conforms to. Used by consumers for deserialisation and validation",
+			"type": "string",
+			"format": "uri"
+		 },		 
+         "required": ["tenantId", "id", "version", "schema"]
     },
     "Action": {
       "description": "The kind of operation that was performed on the resource",
