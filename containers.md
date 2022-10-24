@@ -77,7 +77,7 @@ Each of these facets of the container are discussed in more detail below.
 
 ### Significant Use cases
 
- - [Update Accruals](/collaberations/record-time.md#accruals)
+ - [Update Accruals](/choreography/record-time.md#accruals)
 
 ### Resources
 - TODO
