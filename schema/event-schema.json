@@ -5,15 +5,35 @@
   "description": "Describes an action and the Callisto resource that it was performed against",
   "type": "object",
   "properties": {
-    "action": {
-      "type": "string",
-	  "enum": ["create", "update", "delete"],
-      "description": "The kind of operation that was performed on the resource"
-	  },
-    "resource": {
-      "type": "object",
-      "description": "The resource that was the subject of the action"
+    "action" : {
+    	"$ref": "#/definitions/Action"
+    }, 
+    "resource" : {
+    	"type": "object"
     }
   },
-  "required": ["action", "resource"]
+  "required": ["action", "resource"],
+  "definitions":{
+    "ResourceReference": {
+      	 "description": "A reference to a Resource. Can be used to retrieved full Resource",
+         "type": "object",
+         "properties": {
+         	"tenantId": {
+            	"type": "number"
+            },
+            "id": {
+            	"type": "number"
+            },
+             "version": {
+            	"type": "number"
+            } 
+         },
+         "required": ["tenantId", "id", "version"]
+    },
+    "Action": {
+      "description": "The kind of operation that was performed on the resource",
+      "type": "string",
+	  "enum": ["create", "update", "delete"],
+	  }
+  }
 }
