@@ -10,6 +10,18 @@
     }, 
     "resource" : {
     	"type": "object"
+		"properties": {
+			"schema": {
+				"description": "The schema that the content conforms to. Used by consumers for deserialisation and validation",
+				"type": "string",
+				"format": "uri"
+			}
+			"content": {
+				"description": "The actual Resource that is the subject of the event",
+				"type": "object"
+			}
+		},
+		"required": ["schema", "content"]
     }
   },
   "required": ["action", "resource"],
@@ -33,7 +45,7 @@
     "Action": {
       "description": "The kind of operation that was performed on the resource",
       "type": "string",
-	  "enum": ["create", "update", "delete"],
+	  "enum": ["create", "update", "delete"]
 	  }
   }
 }

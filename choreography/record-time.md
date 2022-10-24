@@ -36,11 +36,7 @@ They interact with the TimeCard container directly through it's user interface. 
 Record time results in the  creation or modification of  a [`TimeEntry`](./../containers.md#timecard-resources-public) instance in the TimeCard container's internal database.
 
 ### External changes
-When a user records time via the TimeCard container this triggers the publication of an event that encapsulates the recorded time. The event is broadcasts via a topic managed by a Kafka message broker.
-
-When a `TimeEntry` is successfully recorded by the TimeCard container it triggers the publication of an event that encapsulates that `TimeEntry` resource along with the type of action that was performed on the resource (TODO - link to event page).
-
-As an event producer the TimeCard container should follow the blueprints below - 
+When a `TimeEntry` is successfully recorded by the TimeCard container it triggers the publication of an event that encapsulates that `TimeEntry` resource along with the type of action that was performed on the resource. As an event producer the TimeCard container should follow the blueprints below - 
 
 - [topic creation](../blueprints/topic-creation.md)
 - [event publication (schema & trigger points)](../blueprints/event-publication.md)
@@ -49,9 +45,13 @@ As an event producer the TimeCard container should follow the blueprints below -
 There are a number of Callisto containers that consume record time events that are produced by the TimeCard container. The sections below list the containers that are consuming those  events and describe what action is taken by the consuming container when the event is received. 
 
 ##### Accruals
-![Submit Time Entry](../images/submitTimeEntry.png)
-The Accruals container consumes all `TimeEntry` events and uses them to keep Accrual balances up to date. 
+![annualTargetHoursTimeCardUpdateAccrualModule.png](../images/annualTargetHoursTimeCardUpdateAccrualModule.png)
 
-More detail on this process can be found in the [Accruals TimeEntry consumer design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/main/docs/features/annual-target-hours/timecard-timeentry.md)
+The Accruals container consumes all `TimeEntry` events and uses them to keep Accrual balances up to date. Data in the `TimeEntry` event is used to determine which Accrual modules are effected by the recorded time. From there Accruals uses the time that has been recorded to update the balance on the identified Accrual modules.
+
+**More detail** 
+
+- [Accruals TimeEntry consumer design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/annual-target-hours/timecard-timeentry.md)
+- [Accruals Annual Target Hours feature](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249)
 
  

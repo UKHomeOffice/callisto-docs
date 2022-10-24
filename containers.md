@@ -69,11 +69,15 @@ The Scheduler container is used by planners to design and staff (roster) shifts.
 ## Accruals
 In Border Force many people are on what is known as an Annualised Hours Agreement (AHA). In short each person will have a set of target hours that they need to work in order to gain an uplift in their basic pay. The Accruals container tracks how people are performing against those targets.
 
-![accruals-overview.png](./images/accruals-overview.png)
+![Accruals container](./images/accruals-container.png)
 
 The diagram above shows the Accruals container in the centre with the other Callisto containers that it collaborates with. In addition the diagram shows the different types of end user who will interact with the container through its RESTful API.
 
 Each of these facets of the container are discussed in more detail below.
+
+### Significant Use cases
+
+ - [Update Accruals](/collaberations/record-time.md#accruals)
 
 ### Resources
 - TODO

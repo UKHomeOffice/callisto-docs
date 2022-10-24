@@ -7,14 +7,17 @@ An event wraps the effected Resource in an envelope of sorts. The envelope decor
 ## Resource lifecycle
 Callisto event producers are in charge of publishing what they see as significant events in the life of Resources that they expose. There are a number of lifecycle events that can happen to a Resource but a given publisher may not choose to broadcast all of them (see the documentation for a specific publisher). The complete set of lifecycle events is listed below - 
 
-create - to be used when a new Resource has been created
-update - to be used when an existing Resource has been modified (this includes changes to contained child Resources where that change might be a deletion of a given child Resource)
-delete - to be used when an existing Resource has been removed. No further updates to that Resource are expected (**TODO** - what about undo?)
+- create - to be used when a new Resource has been created
+- update - to be used when an existing Resource has been modified (this includes changes to contained child Resources where that change might be a deletion of a given child Resource)
+- delete - to be used when an existing Resource has been removed. No further updates to that Resource are expected (**TODO** - what about undo?)
+
+## Register Resource schema
+**TODO** - in order to support deserialisation and validation of the `resource.content` the consumer needs to know what the schema of the content is. Each container shuld publish schema (in Avro) - can we have Avro solve this for us without having to invent a bespoke approach? 
 
 
 ## Event model
 
-Note that the event is flexible in terms of the way it can carry the effected Resource. The `Event.resource` property is an untyped object and is therefore free to carry any content. Due to this flexibility a publisher could choose to wrap a ResourceReference (see definitions/ResourceReference in the schema below) instance instead of the full Resource. Producers might do this when a Resource has been deleted or if they wish to save bandwidth
+Note that the event is flexible in terms of the way it can carry the effected Resource. The `resource.content` property is an untyped object and is therefore free to carry any content. Due to this flexibility a publisher could choose to wrap a ResourceReference (see definitions/ResourceReference in the schema below) instance instead of the full Resource. Producers might do this when a Resource has been deleted or if they wish to save bandwidth
 
 ```yaml
 {
@@ -29,6 +32,18 @@ Note that the event is flexible in terms of the way it can carry the effected Re
     }, 
     "resource" : {
     	"type": "object"
+		"properties": {
+			"schema": {
+				"description": "The schema that the content conforms to. Used by consumers for deserialisation and validation",
+				"type": "string",
+				"format": "uri"
+			}
+			"content": {
+				"description": "The actual Resource that is the subject of the event",
+				"type": "object"
+			}
+		},
+		"required": ["schema", "content"]
     }
   },
   "required": ["action", "resource"],
@@ -52,7 +67,7 @@ Note that the event is flexible in terms of the way it can carry the effected Re
     "Action": {
       "description": "The kind of operation that was performed on the resource",
       "type": "string",
-	  "enum": ["create", "update", "delete"],
+	  "enum": ["create", "update", "delete"]
 	  }
   }
 }
