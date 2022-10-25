@@ -38,8 +38,17 @@ Record time results in the  creation or modification of  a [`TimeEntry`](./../co
 ### External changes
 When a `TimeEntry` is successfully recorded by the TimeCard container it triggers the publication of an event that encapsulates that `TimeEntry` resource along with the type of action that was performed on the resource. As an event producer the TimeCard container should follow the blueprints below - 
 
-- [topic creation](../blueprints/topic-creation.md)
-- [event publication (schema & trigger points)](../blueprints/event-publishing-and-consuming.md)
+#### Topic
+Based on the guideance in the [topic creation](../blueprints/topic-creation.md) blueprint the following are suggested - 
+
+- name - callisto-timecard
+- partition key - `TimeEntry.ownerId`
+
+#### Event
+Based on the guideance in the [event publication (schema & trigger points)](../blueprints/event-publishing-and-consuming.md) blueprint the following are suggested - 
+
+- events to capture - create, update & delete
+- use ResourceReference as `resource.content` for a delete event
 
 #### Event consumers
 There are a number of Callisto containers that consume record time events that are produced by the TimeCard container. The sections below list the containers that are consuming those  events and describe what action is taken by the consuming container when the event is received. 
