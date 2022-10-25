@@ -31,7 +31,7 @@ As a consumer of an event you must decide three things
 
 Note that the event is flexible in terms of the way it can carry the effected Resource. The `resource.content` property is an untyped object and is therefore free to carry any content. Due to this flexibility a publisher could choose to wrap a ResourceReference (see definitions/ResourceReference in the schema below) instance instead of the full Resource. Producers might do this when a Resource has been deleted or if they wish to save bandwidth
 
-```yaml
+```json
 {
   "$id": "https://callisto.digital.homeoffice.gov.uk/event.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
