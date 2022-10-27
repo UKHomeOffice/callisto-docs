@@ -61,6 +61,7 @@ The Accruals container consumes all `TimeEntry` events and uses them to keep Acc
 **More detail** 
 
 - [Accruals TimeEntry consumer design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/annual-target-hours/timecard-timeentry.md)
-- [Accruals Annual Target Hours feature](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249)
+- [TimeCard TimeEntry producer design](https://github.com/UKHomeOffice/callisto-timecard-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
+- [Accruals Annual Target Hours business requirements](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249) (access required)
 
  
