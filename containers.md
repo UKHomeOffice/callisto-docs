@@ -39,7 +39,7 @@ Resources are divided into two categories
 
 ### Reference data
 - `TimePeriodType` - a way to categorise time periods (e.g. a shift, a standard rest day)
-- `TeamMemberType` - differentiates different roles that a person may have within a given `Team`
+- `FlexChangeType` - a way to categorise different kinds of flexible change
 
 ### <a name="timecard-events-produced">Events produced</a>
 - `TimeEntry` - an event that holds data about a period of time worked by a given person. It includes the type of activity that was worked in the time
