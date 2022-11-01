@@ -3784,8 +3784,8 @@
     },
     {
       "type": "text",
-      "version": 502,
-      "versionNonce": 217749623,
+      "version": 514,
+      "versionNonce": 2042732793,
       "isDeleted": false,
       "id": "0Oixe-uAoqDldEso78zzO",
       "fillStyle": "hachure",
@@ -3804,17 +3804,17 @@
       "groupIds": [],
       "strokeSharpness": "sharp",
       "boundElements": [],
-      "updated": 1667308768759,
+      "updated": 1667314487157,
       "link": null,
       "locked": false,
       "fontSize": 20,
       "fontFamily": 1,
-      "text": "accrual consumer\n ",
+      "text": "accrual consumer\n & calculator",
       "baseline": 43,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "accrual consumer\n "
+      "originalText": "accrual consumer\n & calculator"
     },
     {
       "type": "line",
@@ -3879,8 +3879,8 @@
     },
     {
       "type": "text",
-      "version": 826,
-      "versionNonce": 562785367,
+      "version": 829,
+      "versionNonce": 910292249,
       "isDeleted": false,
       "id": "-ewBUtqX7FhTbg3B6uDNV",
       "fillStyle": "hachure",
@@ -3890,10 +3890,10 @@
       "opacity": 100,
       "angle": 0,
       "x": 841.7395625652398,
-      "y": 1958.505882849473,
+      "y": 1960.3240646676545,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 254,
+      "width": 143,
       "height": 75,
       "seed": 548329911,
       "groupIds": [],
@@ -3904,17 +3904,17 @@
           "type": "arrow"
         }
       ],
-      "updated": 1667311278945,
+      "updated": 1667314471816,
       "link": null,
       "locked": false,
       "fontSize": 20,
       "fontFamily": 1,
-      "text": "accrual \nREST API\n(data access & biz logic)",
+      "text": "accrual \nREST API\n(data access)",
       "baseline": 68,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "accrual \nREST API\n(data access & biz logic)"
+      "originalText": "accrual \nREST API\n(data access)"
     },
     {
       "type": "arrow",
