@@ -18,18 +18,35 @@ UNDECIDED
 
 ### Assumptions
 - Compoeents from one container cannot directly access the data store(s)belonging to the componenets of another container
-
+- *We wont prefer quicker initial development over long term objectives*
 
 ### Constraints
 
 - speed of initial development
-- independently scalable
+- independently 
+  - scalable
+  - testable
+  - deployable
+  - observable (Health check)
 - supports concurrent development
 - deployment simplicity
 - impact of breaking schema change
 - speed of issue identification
 - speed of throughput
 - attack vector surface
+- security
+- versioning
+
+### Comments
+**Microservice own their data**
+Encapsulating the data ensures that the microservices are loosely coupled and can evolve independently of one another. If multiple services were accessing the same data, schema updates would require coordinated updates to all the services. This would break the microservice lifecycle autonomy.
+
+**Loosely coupled**
+No need to coordinate releases. Faster Time to Market. Development Velocity. Better and Less Complex Code. Easy to Release Small Changes Frequently.
+Easy data migrations/schema changes
+
+**Single Responsibility**
+Making change easier. Bugs easier to find/fix
 
 ### Options
 ![component-data-access-decision.png](../images/component-data-access-decision.png)
@@ -43,3 +60,4 @@ UNDECIDED
 ### Related decisions
 
 ### Related requirements
+
