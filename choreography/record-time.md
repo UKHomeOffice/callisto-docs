@@ -41,7 +41,7 @@ When a `TimeEntry` is successfully recorded by the TimeCard container it trigger
 #### Topic
 Based on the guideance in the [topic creation](../blueprints/topic-creation.md) blueprint the following are suggested - 
 
-- name - callisto-timecard
+- name - `callisto-timecard`
 - partition key - `TimeEntry.ownerId`
 
 #### Event
@@ -54,14 +54,29 @@ Based on the guideance in the [event publication (schema & trigger points)](../b
 There are a number of Callisto containers that consume record time events that are produced by the TimeCard container. The sections below list the containers that are consuming those  events and describe what action is taken by the consuming container when the event is received. 
 
 ##### Accruals
-![annualTargetHoursTimeCardUpdateAccrualModule.png](../images/annualTargetHoursTimeCardUpdateAccrualModule.png)
+![calculate-and-update-accrual-balances-overview.png](../images/calculate-and-update-accrual-balances-overview.png)
 
 The Accruals container consumes all `TimeEntry` events and uses them to keep Accrual balances up to date. Data in the `TimeEntry` event is used to determine which Accrual modules are effected by the recorded time. From there Accruals uses the time that has been recorded to update the balance on the identified Accrual modules.
 
-**More detail** 
+There are two components within the Accruals container that are involved in responding to `TimeEntry` events - 
 
-- [Accruals TimeEntry consumer design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/annual-target-hours/timecard-timeentry.md)
+**balance-calculator**
+
+Cousumes `TimeEntry` events from the `callisto-timecard` topic. Calcualtes balances based on those events and also data held in the Accruals data store.
+
+**rest-api**
+
+Exposes Accrual data that is read and written by the `balance-calculator`
+Exposes Accrual data that is read by workers and their managers
+
+**More detail** 
 - [TimeCard TimeEntry producer design](https://github.com/UKHomeOffice/callisto-timecard-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
+
+- [Accruals balance calculator design](https://github.com/UKHomeOffice/callisto-accruals-balance-calculator/blob/eahw-1249/annual-target-hours/docs/features/annual-target-hours/timecard-timeentry.md)
+
+- [Accruals summary view design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/rest-operations.md#accrualsummary)
+
+
 - [Accruals Annual Target Hours business requirements](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249) (access required)
 
  
