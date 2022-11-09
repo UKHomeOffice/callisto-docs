@@ -58,7 +58,7 @@ There are a number of Callisto containers that consume record time events that a
 
 The Accruals container consumes all `TimeEntry` events and uses them to keep Accrual balances up to date. Data in the `TimeEntry` event is used to determine which Accrual modules are effected by the recorded time. From there Accruals uses the time that has been recorded to update the balance on the identified Accrual modules.
 
-There are two components within the Accruals container that are involved in responding to `TimeEntry` events - 
+There are two containers within the Accruals system that are involved in responding to `TimeEntry` events - 
 
 **balance-calculator**
 
@@ -72,9 +72,7 @@ Exposes Accrual data that is read by workers and their managers
 **More detail** 
 - [TimeCard TimeEntry producer design](https://github.com/UKHomeOffice/callisto-timecard-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
 
-- [Accruals balance calculator design](https://github.com/UKHomeOffice/callisto-accruals-balance-calculator/blob/eahw-1249/annual-target-hours/docs/features/annual-target-hours/timecard-timeentry.md)
-
-- [Accruals summary view design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/rest-operations.md#accrualsummary)
+- [Accruals system design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
 
 
 - [Accruals Annual Target Hours business requirements](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249) (access required)
