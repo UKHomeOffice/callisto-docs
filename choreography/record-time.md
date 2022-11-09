@@ -72,7 +72,7 @@ Exposes Accrual data that is read by workers and their managers
 **More detail** 
 - [TimeCard TimeEntry producer design](https://github.com/UKHomeOffice/callisto-timecard-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
 
-- [Accruals system design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md)
+- [Accruals system design](https://github.com/UKHomeOffice/callisto-accruals-restapi/blob/eahw-1249/annual-target-hours/docs/features/eahw-1249-annual-target-hours.md) 
 
 
 - [Accruals Annual Target Hours business requirements](https://collaboration.homeoffice.gov.uk/jira/browse/EAHW-1249) (access required)
