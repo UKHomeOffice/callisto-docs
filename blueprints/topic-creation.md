@@ -15,6 +15,8 @@ The event type encapsulates data that we do not want all consumers of a topic to
 ### When to partition a topic
 Partitioning is Kafka's way of achieving higher throughout. If a single consumer is creating a bottleneck then it might be worth considering partitioning a topic and adding a consumer group that holds multiple consumers. 
 
+At this time it is considered likely hat, in addition to the primary partition key, for example OwnerId as prefix of TenantId would be included.
+
 Does the data need to be consumed in some sort of order. If not then consider using the uncorrelated/random partitioning strategy (**TODO** link).
 
 If it does need to be ordered then the partition design needs to be carefully considered. In particular bear the following in mind - 
