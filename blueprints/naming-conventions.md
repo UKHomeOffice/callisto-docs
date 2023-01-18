@@ -14,3 +14,11 @@ The database table resources will be defined using the @Entity annotation. These
 naming convention. Please note that the table name should not be plural name. I.E.
 
 `@Entity(name = "time_period_type")`
+
+# Kafka Topic Name
+
+The name of a topic should adhere to the following naming convention
+
+Topic name = callisto-[publishing container-name]-[suffix] 
+
+where [suffix] can be the entity type [i.e TimeEntry] or, if a combination of different entity types published in the same topic an appropriate collective noun.
