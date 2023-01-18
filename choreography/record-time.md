@@ -42,7 +42,7 @@ When a `TimeEntry` is successfully recorded by the TimeCard container it trigger
 Based on the guideance in the [topic creation](../blueprints/topic-creation.md) blueprint the following are suggested - 
 
 - name - `callisto-timecard`
-- partition key - `TimeEntry.ownerId`
+- partition key - 'TimeEntry.tenantid' - `TimeEntry.ownerId`
 
 #### Event
 Based on the guideance in the [event publication (schema & trigger points)](../blueprints/event-publishing-and-consuming.md) blueprint the following are suggested - 
