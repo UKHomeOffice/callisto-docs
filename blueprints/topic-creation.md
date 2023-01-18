@@ -37,7 +37,7 @@ Instead of using a consumer group, you can directly assign partitions through th
 ### Topic creation checklist
 When you are creating a new topic you need to make sure that the following tasks are done
 
- - Name the topic following the naming convention of topic name = callisto-[publishing container-name]
+ - Name the topic following the naming convention of topic name = callisto-[publishing container-name]-[suffix] where [suffix] can be the entity type or, if a combination of different entity types published in the same topic an appropriate collective noun.
  - Document the topic [here]() **TODO** 
  - Deploy the topic **TODO** deployment checklist (partition number, securing it to prevent unauthorised access)
 
