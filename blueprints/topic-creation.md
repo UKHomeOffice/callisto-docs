@@ -3,7 +3,7 @@
 
 This guidance is intended to aid in the decision around when a new topic should be created and whether or not explicit partitioning is required.
 
-**As a rule of thumb each Container has a single topic that all events are published on**
+**As a rule of thumb each topic will contain events for a single entity**
 
 Sometimes the above rule will not be applicable. Below are some points to consider before you choose to follow the default.
 
