@@ -62,7 +62,7 @@ There are two containers within the Accruals system that are involved in respond
 
 **balance-calculator**
 
-Cousumes `TimeEntry` events from the `callisto-timecard-timeentries` topic. Calcualtes balances based on those events and also updates data held in the Accruals data store.
+Cousumes `TimeEntry` events from the `callisto-timecard-timeentry` topic. Calcualtes balances based on those events and also updates data held in the Accruals data store.
 
 **rest-api**
 
