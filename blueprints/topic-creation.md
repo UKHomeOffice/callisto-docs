@@ -10,12 +10,12 @@ Sometimes the above rule will not be applicable. Below are some points to consid
 ### When to create an additional container topic
 The new event type(s) to be published would add significantly more throughout to the existing topic thus placing more burden on consumers to filter/handle those additional event type instances. It is difficult to be precise about a definition of "significant". On this basis where this scenario does arise it will need to be considered on its own merits.
 
-The event type encapsulates data that we do not want all consumers of a topic to see. This may bring it's own challenges and will need to be considered on a case by case basis
+The event type encapsulates data that we do not want all consumers of a topic to see. This may bring its own challenges and will need to be considered on a case by case basis
 
 ### When to partition a topic
-Partitioning is Kafka's way of achieving higher throughout. If a single consumer is creating a bottleneck then it might be worth considering partitioning a topic and adding a consumer group that holds multiple consumers. 
+Partitioning is Kafka's way of achieving higher throughput. If a single consumer is creating a bottleneck then it might be worth considering partitioning a topic and adding a consumer group that holds multiple consumers. 
 
-At this time it is considered likely hat, in addition to the primary partition key, for example OwnerId as prefix of TenantId would be included.
+At this time it is considered likely that, in addition to the primary partition key, for example OwnerId as prefix of TenantId would be included.
 
 Does the data need to be consumed in some sort of order. If not then consider using the uncorrelated/random partitioning strategy (**TODO** link).
 
